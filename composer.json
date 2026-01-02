@@ -3,10 +3,11 @@
   "autoload": {
     "psr-4": {
       "Core\\": "core/",
-      "Modules\\": "core/Modules/",
+      "Dev\\": "dev/",
       "Components\\": "dev/Components/",
       "Patterns\\": "core/Traits/Patterns/",
-      "Dev\\": "dev/"
+      "Modules\\": "core/Modules/",
+      "Tables\\": "dev/Tables/"
     }
   }
 }
