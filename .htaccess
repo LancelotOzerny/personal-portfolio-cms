@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} !^/core/.* [NC]
+RewriteCond %{REQUEST_URI} !^/phpmyadmin/.* [NC]
+RewriteCond %{REQUEST_URI} !\.style\.php$ [NC]
+
+RewriteRule ^(.*\.php)$ /core/bootstrap.php [L,QSA]
+
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+php_flag display_errors on
+php_flag log_errors on
