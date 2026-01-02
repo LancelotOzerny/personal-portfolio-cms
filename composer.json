@@ -4,6 +4,7 @@
     "psr-4": {
       "Core\\": "core/",
       "Modules\\": "core/Modules/",
+      "Components\\": "dev/Components/",
       "Patterns\\": "core/Traits/Patterns/",
       "Dev\\": "dev/"
     }

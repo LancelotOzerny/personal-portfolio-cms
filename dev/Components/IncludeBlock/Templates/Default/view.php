@@ -1,0 +1,1 @@
+<?= $this->params['text'] ?? 'Text Not Founded!' ?>
