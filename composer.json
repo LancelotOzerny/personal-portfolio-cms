@@ -3,6 +3,8 @@
   "autoload": {
     "psr-4": {
       "Core\\": "core/",
+      "Modules\\": "core/Modules/",
+      "Patterns\\": "core/Traits/Patterns/",
       "Dev\\": "dev/"
     }
   }

@@ -7,11 +7,17 @@ try
 {
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . $redirect_url))
     {
-        $buffer = ob_start();
+        $pageContent = ob_start();
         include_once ($_SERVER['DOCUMENT_ROOT'] . $redirect_url);
-        $buffer = ob_get_clean();
+        $pageContent = ob_get_clean();
 
-        echo $buffer;
+        $links = \Modules\Main\AssetLoader::getInstance()->getLinks();
+        $pageContent = str_replace('</head>', join("\n", $links) . '</head>', $pageContent);
+
+        $scripts = \Modules\Main\AssetLoader::getInstance()->getScripts();
+        $pageContent = str_replace('</body>', join("\n", $scripts) . '</body>', $pageContent);
+
+        echo $pageContent;
     }
 }
 catch (Throwable $e)
