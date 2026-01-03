@@ -1,1 +1,1 @@
-Game Designer • Web Developer • Creative Director
+Web разработчик / Дизайнер
