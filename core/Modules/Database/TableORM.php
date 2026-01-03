@@ -15,7 +15,8 @@ abstract class TableORM
 
     public function create(): bool
     {
-        if (empty($this->fields)) {
+        if (empty($this->fields))
+        {
             error_log("Ошибка: поля таблицы {$this->tableName} не определены.");
             return false;
         }
@@ -34,15 +35,14 @@ abstract class TableORM
 
         try {
             $this->pdo->exec($sql);
-            echo "<br/>✓ Таблица {$this->tableName} создана успешно.\n";
             return true;
-        } catch (\PDOException $e) {
+        } catch (\PDOException $e)
+        {
             error_log("<br/>❌ Ошибка создания таблицы {$this->tableName}:\n" . $e->getMessage());
             error_log("<br/>SQL-запрос: " . $sql);
             return false;
         }
     }
-
 
     public function delete(): bool
     {
@@ -84,6 +84,15 @@ abstract class TableORM
             error_log('Ошибка вставки: ' . $e->getMessage());
             return false;
         }
+    }
+
+    public function getAll(): ?array
+    {
+        $sql = sprintf('SELECT * FROM %s', $this->tableName);
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll() ?: null;
     }
 
     public function find(int $id): ?array
