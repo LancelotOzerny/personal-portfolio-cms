@@ -18,7 +18,7 @@ class Component
             AssetLoader::getInstance()->styles->add($stylePath);
         }
 
-        $scriptPath = $this->getTemplatePath() . '/script.js';
+        $scriptPath = $this->getTemplatePath() . '/template_script.js';
         if (file_exists(Application::getInstance()->rootPath . '/' . $scriptPath))
         {
             AssetLoader::getInstance()->scripts->add($scriptPath);
