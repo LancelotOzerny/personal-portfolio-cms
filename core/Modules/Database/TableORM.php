@@ -7,11 +7,15 @@ abstract class TableORM
     protected \PDO $pdo;
     protected string $tableName;
     protected array $fields;
+    protected array $foreignKeys = [];
 
     public function __construct()
     {
         $this->pdo = Database::getInstance()->getPdo();
+        $this->setTableParams();
     }
+
+    protected function setTableParams() : void {}
 
     public function create(): bool
     {
@@ -27,21 +31,50 @@ abstract class TableORM
             $columns[] = '`' . $name . '` ' . $definition;
         }
 
+        foreach ($this->foreignKeys as $fk)
+        {
+            $columns[] = $fk['constraint'];
+        }
+
         $sql = sprintf(
             'CREATE TABLE IF NOT EXISTS `%s` (%s) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;',
             $this->tableName,
             implode(', ', $columns)
         );
 
-        try {
+        try
+        {
             $this->pdo->exec($sql);
             return true;
-        } catch (\PDOException $e)
+        }
+        catch (\PDOException $e)
         {
             error_log("<br/>❌ Ошибка создания таблицы {$this->tableName}:\n" . $e->getMessage());
             error_log("<br/>SQL-запрос: " . $sql);
             return false;
         }
+    }
+
+    protected function addForeignKey(
+        string $constraintName,
+        string $localColumn,
+        string $referencedTable,
+        string $referencedColumn,
+        string $onDelete = 'RESTRICT',
+        string $onUpdate = 'CASCADE'
+    ): void
+    {
+        $this->foreignKeys[] = [
+            'constraint' => sprintf(
+                'CONSTRAINT %s FOREIGN KEY (%s) REFERENCES %s (%s) ON DELETE %s ON UPDATE %s',
+                $constraintName,
+                $localColumn,
+                $referencedTable,
+                $referencedColumn,
+                $onDelete,
+                $onUpdate
+            )
+        ];
     }
 
     public function delete(): bool

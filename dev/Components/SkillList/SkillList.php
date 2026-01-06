@@ -26,7 +26,7 @@ class SkillList extends Component
 
         foreach ($arrSkills as $skill)
         {
-            $this->params['areas'][$skill['skill_area_id']]['skills'][] = $skill;
+            $this->params['areas'][$skill['area_id']]['skills'][] = $skill;
         }
     }
 }
