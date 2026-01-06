@@ -10,12 +10,10 @@ class SkillsTable extends TableORM
     {
         $this->tableName = 'skills';
 
-        $this->fields = [
-            'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
-            'name' => 'VARCHAR(255) NOT NULL UNIQUE',
-            'progress' => 'INT(3)',
-            'area_id' => 'INT NOT NULL',
-        ];
+        $this->addField('id', 'INT AUTO_INCREMENT PRIMARY KEY');
+        $this->addField('name', 'VARCHAR(255) NOT NULL UNIQUE');
+        $this->addField('progress', 'INT(3)');
+        $this->addField('area_id', 'INT NOT NULL');
 
         $this->addForeignKey(
             'fk_skill_area',

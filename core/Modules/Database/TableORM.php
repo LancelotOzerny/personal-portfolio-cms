@@ -6,13 +6,18 @@ abstract class TableORM
 {
     protected \PDO $pdo;
     protected string $tableName;
-    protected array $fields;
+    private array $fields;
     protected array $foreignKeys = [];
 
     public function __construct()
     {
         $this->pdo = Database::getInstance()->getPdo();
         $this->setTableParams();
+    }
+
+    protected function addField(string $field, string $value) : void
+    {
+        $this->fields[$field] = $value;
     }
 
     protected function setTableParams() : void {}

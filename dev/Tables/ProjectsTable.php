@@ -10,12 +10,10 @@ class ProjectsTable extends TableORM
     {
         $this->tableName = 'projects';
 
-        $this->fields = [
-            'id' => 'INT AUTO_INCREMENT PRIMARY KEY',
-            'name' => 'VARCHAR(255) NOT NULL',
-            'preview_text' => 'VARCHAR(255) NOT NULL',
-            'preview_image' => 'VARCHAR(255) NOT NULL',
-            'text' => 'TEXT',
-        ];
+        $this->addField('id', 'INT AUTO_INCREMENT PRIMARY KEY');
+        $this->addField('name', 'VARCHAR(255) NOT NULL');
+        $this->addField('preview_text', 'VARCHAR(255) NOT NULL');
+        $this->addField('preview_image', 'VARCHAR(255) NOT NULL');
+        $this->addField('text', 'TEXT');
     }
 }
