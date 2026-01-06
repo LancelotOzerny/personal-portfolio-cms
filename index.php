@@ -46,78 +46,9 @@ Template::getInstance()->showHeader();
         <div class="section-title__wrapper">
             <p class="section-title right blue hashtag">Скромное портфолио</p>
         </div>
-        <div class="cards-wrapper">
-            <div class="card col-4">
-                <div class="card__header">
-                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
-                <div class="card__content">
-                    <p class="card__title">Проект 1</p>
-                    <p class="card__description">
-                        <lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar></lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                    </p>
-                </div>
-                <div class="card__footer"><a class="btn btn--white btn--medium" href="#">Git</a><a class="btn btn--white btn--medium" href="#">Demo</a>
-                </div>
-            </div>
-            <div class="card col-4">
-                <div class="card__header">
-                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
-                <div class="card__content">
-                    <p class="card__title">Проект 1</p>
-                    <p class="card__description">
-                        <lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar></lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                    </p>
-                </div>
-                <div class="card__footer"><a class="btn btn--white btn--medium" href="#">Git</a><a class="btn btn--white btn--medium" href="#">Demo</a>
-                </div>
-            </div>
-            <div class="card col-4">
-                <div class="card__header">
-                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
-                <div class="card__content">
-                    <p class="card__title">Проект 1</p>
-                    <p class="card__description">
-                        <lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar></lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                    </p>
-                </div>
-                <div class="card__footer"><a class="btn btn--white btn--medium" href="#">Git</a><a class="btn btn--white btn--medium" href="#">Demo</a>
-                </div>
-            </div>
-            <div class="card col-4">
-                <div class="card__header">
-                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
-                <div class="card__content">
-                    <p class="card__title">Проект 1</p>
-                    <p class="card__description">
-                        <lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar></lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                    </p>
-                </div>
-                <div class="card__footer"><a class="btn btn--white btn--medium" href="#">Git</a><a class="btn btn--white btn--medium" href="#">Demo</a>
-                </div>
-            </div>
-            <div class="card col-4">
-                <div class="card__header">
-                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
-                <div class="card__content">
-                    <p class="card__title">Проект 1</p>
-                    <p class="card__description">
-                        <lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar></lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar lorem ipsum emmet dollar>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                        <Lorem>ipsum dollar emmet Lorem ipsum dollar emmet Lorem ipsum dollar emmet</Lorem>
-                    </p>
-                </div>
-                <div class="card__footer"><a class="btn btn--white btn--medium" href="#">Git</a><a class="btn btn--white btn--medium" href="#">Demo</a>
-                </div>
-            </div>
-        </div>
+        <?php
+        (new \Components\ProjectsList\ProjectsList())->show();
+        ?>
     </div>
 </div>
 <?php Template::getInstance()->showFooter(); ?>

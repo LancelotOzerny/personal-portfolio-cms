@@ -8,7 +8,7 @@ class ProjectLinksTable extends TableORM
 {
     protected function setTableParams() : void
     {
-        $this->tableName = 'skill_links';
+        $this->tableName = 'project_links';
 
         $this->addField('id', 'INT AUTO_INCREMENT PRIMARY KEY');
         $this->addField('name', 'VARCHAR(255) NOT NULL');
