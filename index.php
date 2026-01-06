@@ -36,42 +36,10 @@ Template::getInstance()->showHeader();
             <p class="section-title blue hashtag">Дипломы и сертификаты</p>
         </div>
     </div>
-    <div class="certificates-list">
-        <div class="certificate__wrapper">
-            <div class="certificate page__container certificate--orange">
-                <div class="certificate__left-side">
-                    <p class="certificate__title">Разработчик Bitrix Framework</p>
-                    <div class="certificate__description">
-                        <p>&quot;Интеграция дизайна и настройка платформы&quot;</p>
-                        <p>Дата получения: 26.08.2023</p>
-                        <p>Номер: CERT-EX-DEV-010-18327330-6925848-170239</p>
-                    </div>
-                </div>
-                <div class="certificate__right-side">
-                    <img class="certificate__logo" src="/assets/images/1c-bitrix-logo.png"/>
-                    <div><a class="btn btn--white btn--circle btn--large" href="#">скачать (pdf)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="certificate__wrapper">
-            <div class="certificate page__container certificate--light">
-                <div class="certificate__left-side">
-                    <p class="certificate__title">Диплом бакалавра</p>
-                    <div class="certificate__description">
-                        <p>&quot;09.03.02 Информационные системы и технологии&quot;</p>
-                        <p>Дата выдачи: 05.05.2024</p>
-                        <p>Профиль: Разработка информационных систем</p>
-                    </div>
-                </div>
-                <div class="certificate__right-side">
-                    <img class="certificate__logo" src="/assets/images/volsu.png"/>
-                    <div><a class="btn btn--white btn--circle btn--large" href="#">скачать (pdf)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <?php
+    (new \Components\CertificatesList\CertificatesList(['count' => 6]))->show();
+    ?>
 </div>
 <div class="page__block page__block--spaced" id="anchor-portfolio">
     <div class="page__container">

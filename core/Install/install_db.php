@@ -22,9 +22,9 @@ $skillAreas->delete();
 
 
 $skillAreas->create();
-$skillAreas->insert(['name' => 'Frontend', 'description' => '']);
-$skillAreas->insert(['name' => 'Backend', 'description' => '']);
-$skillAreas->insert(['name' => 'Other', 'description' => '']);
+$skillAreas->insert(['name' => 'Frontend', 'description' => 'lorem ipsum emmet assen dollar of course the spaces of names his soon of the language google meet']);
+$skillAreas->insert(['name' => 'Backend', 'description' => 'lorem ipsum emmet assen dollar of course the spaces of names his soon of the language google meet']);
+$skillAreas->insert(['name' => 'Other', 'description' => 'lorem ipsum emmet assen dollar of course the spaces of names his soon of the language google meet']);
 
 
 

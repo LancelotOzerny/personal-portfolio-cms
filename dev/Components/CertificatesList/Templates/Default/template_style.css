@@ -1,0 +1,69 @@
+.certificates-list
+{
+    display: grid;
+    grid-row-gap: 15px;
+}
+
+.certificate {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    padding: 50px 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #000;
+}
+.certificate__right-side {
+    display: grid;
+    align-items: center;
+    text-align: right;
+    grid-row-gap: 50px;
+}
+.certificate__title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 2px #000, 0 0 3px #000, 0 0 1px #000, 0 0 1px #000;
+}
+.certificate__description {
+    display: grid;
+    grid-row-gap: 15px;
+}
+.certificate__logo {
+    max-width: 400px;
+}
+.certificate .btn
+{
+    text-wrap: nowrap;
+}
+.certificate.certificate--orange {
+    background-color: #F7B35F;
+}
+.certificate.certificate--orange .certificate__title {
+    color: #FF726B;
+}
+.certificate.certificate--light {
+    background-color: #EEEEEE;
+}
+.certificate.certificate--light .certificate__title {
+    color: #98C2FF;
+}
+@media screen and (max-width: 1080px) {
+    .certificate {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        grid-row-gap: 50px;
+    }
+    .certificate__right-side {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 720px) {
+    .certificate__logo {
+        max-width: 350px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .certificate__logo {
+        max-width: 200px;
+    }
+}
