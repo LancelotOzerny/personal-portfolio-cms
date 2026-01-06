@@ -47,7 +47,8 @@ Template::getInstance()->showHeader();
                         <p>Номер: CERT-EX-DEV-010-18327330-6925848-170239</p>
                     </div>
                 </div>
-                <div class="certificate__right-side"><img class="certificate__logo" src="assets/images/1c-bitrix-logo.png"/>
+                <div class="certificate__right-side">
+                    <img class="certificate__logo" src="/assets/images/1c-bitrix-logo.png"/>
                     <div><a class="btn btn--white btn--circle btn--large" href="#">скачать (pdf)</a>
                     </div>
                 </div>
@@ -63,7 +64,8 @@ Template::getInstance()->showHeader();
                         <p>Профиль: Разработка информационных систем</p>
                     </div>
                 </div>
-                <div class="certificate__right-side"><img class="certificate__logo" src="assets/images/volsu.png"/>
+                <div class="certificate__right-side">
+                    <img class="certificate__logo" src="/assets/images/volsu.png"/>
                     <div><a class="btn btn--white btn--circle btn--large" href="#">скачать (pdf)</a>
                     </div>
                 </div>
@@ -78,7 +80,8 @@ Template::getInstance()->showHeader();
         </div>
         <div class="cards-wrapper">
             <div class="card col-4">
-                <div class="card__header"><img class="card__image" src="assets/images/project.png" alt="project preview image"/></div>
+                <div class="card__header">
+                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
                 <div class="card__content">
                     <p class="card__title">Проект 1</p>
                     <p class="card__description">
@@ -91,7 +94,8 @@ Template::getInstance()->showHeader();
                 </div>
             </div>
             <div class="card col-4">
-                <div class="card__header"><img class="card__image" src="assets/images/project.png" alt="project preview image"/></div>
+                <div class="card__header">
+                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
                 <div class="card__content">
                     <p class="card__title">Проект 1</p>
                     <p class="card__description">
@@ -104,7 +108,8 @@ Template::getInstance()->showHeader();
                 </div>
             </div>
             <div class="card col-4">
-                <div class="card__header"><img class="card__image" src="assets/images/project.png" alt="project preview image"/></div>
+                <div class="card__header">
+                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
                 <div class="card__content">
                     <p class="card__title">Проект 1</p>
                     <p class="card__description">
@@ -117,7 +122,8 @@ Template::getInstance()->showHeader();
                 </div>
             </div>
             <div class="card col-4">
-                <div class="card__header"><img class="card__image" src="assets/images/project.png" alt="project preview image"/></div>
+                <div class="card__header">
+                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
                 <div class="card__content">
                     <p class="card__title">Проект 1</p>
                     <p class="card__description">
@@ -130,7 +136,8 @@ Template::getInstance()->showHeader();
                 </div>
             </div>
             <div class="card col-4">
-                <div class="card__header"><img class="card__image" src="assets/images/project.png" alt="project preview image"/></div>
+                <div class="card__header">
+                    <img class="card__image" src="/assets/images/project.png" alt="project preview image"/></div>
                 <div class="card__content">
                     <p class="card__title">Проект 1</p>
                     <p class="card__description">

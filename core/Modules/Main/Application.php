@@ -13,7 +13,7 @@ class Application
 
     protected function __construct()
     {
-        $this->rootPath = $_SERVER['DOCUMENT_ROOT'];
-        $this->devPath = $this->rootPath . '/dev';
+        $this->rootPath = str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT']);
+        $this->devPath = $this->rootPath . DIRECTORY_SEPARATOR . 'dev';
     }
 }
