@@ -124,23 +124,23 @@ abstract class TableORM
         }
     }
 
-    public function getAll(): ?array
+    public function getAll(): array
     {
         $sql = sprintf('SELECT * FROM %s', $this->tableName);
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
 
-        return $stmt->fetchAll() ?: null;
+        return $stmt->fetchAll() ?? [];
     }
 
-    public function find(int $id): ?array
+    public function find(int $id): array
     {
         $sql = sprintf('SELECT * FROM %s WHERE id = :id', $this->tableName);
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
         $stmt->execute();
 
-        return $stmt->fetch() ?: null;
+        return $stmt->fetch() ?? [];
     }
 
     public function update(int $id, array $data): bool
