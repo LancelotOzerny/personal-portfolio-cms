@@ -42,10 +42,6 @@ class Template
             return;
         }
 
-        echo '<pre>';
-        print_r($filePath);
-        echo '</pre>';
-
         echo '<p>Header of template "' . $this->templateName . '" is not fouded!</p>';
     }
 

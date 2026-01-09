@@ -2,13 +2,23 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 $redirect_url = $_SERVER['REDIRECT_URL'];
+$userRights = 0;
 
 try
 {
-    if (file_exists($_SERVER['DOCUMENT_ROOT'] . $redirect_url))
+    if (
+        str_starts_with($redirect_url, '/admin/')
+        && $redirect_url != '/admin/auth/index.php'
+        && $userRights < 100
+    )
+    {
+        header("Location: /admin/auth/");
+    }
+
+    if (file_exists($filePath = $_SERVER['DOCUMENT_ROOT'] . $redirect_url))
     {
         $pageContent = ob_start();
-        include_once ($_SERVER['DOCUMENT_ROOT'] . $redirect_url);
+        include_once ($filePath);
         $pageContent = ob_get_clean();
 
         $links = \Modules\Main\AssetLoader::getInstance()->getLinks();
