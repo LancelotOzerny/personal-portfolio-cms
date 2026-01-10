@@ -10,18 +10,18 @@ Template::getInstance()->showHeader();
         <header class="main-header">
             <h1 class="main-header__title">
                 <?php
-                (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-name.php']))->show();
+                (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/Dev/Includes/Main/profile-name.php']))->show();
                 ?>
             </h1>
             <div class="main-header__middle-wrapper">
                 <p class="main-header__jobname">
                     <?php
-                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-jobname.php']))->show();
+                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/Dev/Includes/Main/profile-jobname.php']))->show();
                     ?>
                 </p>
                 <p class="main-header__slogan">
                     <?php
-                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-slogan.php']))->show();
+                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/Dev/Includes/Main/profile-slogan.php']))->show();
                     ?>
                 </p>
             </div>
@@ -43,7 +43,7 @@ Template::getInstance()->showHeader();
         <div class="text-block">
             <?php
             (new \Dev\Components\IncludeBlock\IncludeBlock([
-                    'src' => '/dev/Includes/about-me.php'
+                    'src' => '/Dev/Includes/about-me.php'
             ]))->show();
             ?>
         </div>

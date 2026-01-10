@@ -14,6 +14,6 @@ class Application
     protected function __construct()
     {
         $this->rootPath = str_replace('/', DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT']);
-        $this->devPath = $this->rootPath . DIRECTORY_SEPARATOR . 'dev';
+        $this->devPath = $this->rootPath . DIRECTORY_SEPARATOR . 'Dev';
     }
 }
