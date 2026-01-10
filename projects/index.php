@@ -1,5 +1,5 @@
 <?php
-use Modules\Main\Template;
+use Core\Modules\Main\Template;
 
 Template::getInstance()->setTemplate('Main');
 Template::getInstance()->setParam('title', 'Портфолио Веб разработчика');

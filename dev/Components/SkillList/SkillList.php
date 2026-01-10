@@ -1,10 +1,10 @@
 <?php
 
-namespace Components\SkillList;
+namespace Dev\Components\SkillList;
 
-use Modules\Main\Component;
-use Tables\SkillAreasTable;
-use Tables\SkillsTable;
+use Core\Modules\Main\Component;
+use Dev\Tables\SkillAreasTable;
+use Dev\Tables\SkillsTable;
 
 class SkillList extends Component
 {

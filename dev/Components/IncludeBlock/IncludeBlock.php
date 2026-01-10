@@ -1,8 +1,8 @@
 <?php
 
-namespace Components\IncludeBlock;
+namespace Dev\Components\IncludeBlock;
 
-use Modules\Main\Component;
+use Core\Modules\Main\Component;
 
 class IncludeBlock extends Component
 {
@@ -10,7 +10,7 @@ class IncludeBlock extends Component
     {
         if(isset($params['src']))
         {
-            $includePath = \Modules\Main\Application::getInstance()->rootPath . $params['src'];
+            $includePath = \Core\Modules\Main\Application::getInstance()->rootPath . $params['src'];
 
             if (file_exists($includePath))
             {

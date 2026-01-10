@@ -1,5 +1,5 @@
 <?php
-use Modules\Main\Template;
+use Core\Modules\Main\Template;
 
 Template::getInstance()->setTemplate('Main');
 Template::getInstance()->setParam('title', 'Портфолио Веб разработчика');
@@ -10,18 +10,18 @@ Template::getInstance()->showHeader();
         <header class="main-header">
             <h1 class="main-header__title">
                 <?php
-                (new \Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-name.php']))->show();
+                (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-name.php']))->show();
                 ?>
             </h1>
             <div class="main-header__middle-wrapper">
                 <p class="main-header__jobname">
                     <?php
-                    (new \Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-jobname.php']))->show();
+                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-jobname.php']))->show();
                     ?>
                 </p>
                 <p class="main-header__slogan">
                     <?php
-                    (new \Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-slogan.php']))->show();
+                    (new \Dev\Components\IncludeBlock\IncludeBlock(['src' => '/dev/Includes/Main/profile-slogan.php']))->show();
                     ?>
                 </p>
             </div>
@@ -42,7 +42,7 @@ Template::getInstance()->showHeader();
         </div>
         <div class="text-block">
             <?php
-            (new \Components\IncludeBlock\IncludeBlock([
+            (new \Dev\Components\IncludeBlock\IncludeBlock([
                     'src' => '/dev/Includes/about-me.php'
             ]))->show();
             ?>
@@ -55,7 +55,7 @@ Template::getInstance()->showHeader();
             <p class="section-title right blue hashtag">Навыки и стек</p>
         </div>
         <?php
-            (new \Components\SkillList\SkillList())->show();
+            (new \Dev\Components\SkillList\SkillList())->show();
         ?>
     </div>
 </div>
@@ -67,7 +67,7 @@ Template::getInstance()->showHeader();
     </div>
 
     <?php
-    (new \Components\CertificatesList\CertificatesList(['count' => 6]))->show();
+    (new \Dev\Components\CertificatesList\CertificatesList(['count' => 6]))->show();
     ?>
 </div>
 <div class="page__block page__block--spaced" id="anchor-portfolio">
@@ -76,7 +76,7 @@ Template::getInstance()->showHeader();
             <p class="section-title right blue hashtag">Скромное портфолио</p>
         </div>
         <?php
-        (new \Components\ProjectsList\ProjectsList())->show();
+        (new \Dev\Components\ProjectsList\ProjectsList())->show();
         ?>
     </div>
 </div>

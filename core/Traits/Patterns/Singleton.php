@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns;
+namespace Core\Traits\Patterns;
 
 trait Singleton
 {

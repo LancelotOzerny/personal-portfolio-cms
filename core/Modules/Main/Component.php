@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Main;
+namespace Core\Modules\Main;
 
 use ReflectionClass;
 

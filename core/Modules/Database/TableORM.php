@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Database;
+namespace Core\Modules\Database;
 
 abstract class TableORM
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Database;
+namespace Core\Modules\Database;
 
-use Modules\Main\Application;
+use Core\Modules\Main\Application;
 
 class Database
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Components\CertificatesList;
+namespace Dev\Components\CertificatesList;
 
-use Modules\Main\Component;
-use Tables\CertificatesTable;
+use Core\Modules\Main\Component;
+use Dev\Tables\CertificatesTable;
 
 class CertificatesList extends Component
 {

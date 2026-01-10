@@ -1,8 +1,8 @@
 <?php
 
-namespace Tables;
+namespace Dev\Tables;
 
-use Modules\Database\TableORM;
+use Core\Modules\Database\TableORM;
 
 class UsersTable extends TableORM
 {

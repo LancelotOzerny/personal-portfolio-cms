@@ -1,9 +1,9 @@
 <?php
 
-namespace Components\ProjectsList;
+namespace Dev\Components\ProjectsList;
 
-use Modules\Main\Component;
-use Tables\ProjectsTable;
+use Core\Modules\Main\Component;
+use Dev\Tables\ProjectsTable;
 
 class ProjectsList extends Component
 {

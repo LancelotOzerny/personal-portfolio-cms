@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Main;
+namespace Core\Modules\Main;
 
-use Patterns\Singleton;
+use Core\Traits\Patterns\Singleton;
 
 class Template
 {
