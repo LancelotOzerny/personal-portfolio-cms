@@ -1,6 +1,6 @@
 <?php
-\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Modules\Main\Template::getInstance()->showHeader();
+\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
+\Core\Modules\Main\Template::getInstance()->showHeader();
 ?>
 
 <div class="control-list">
@@ -31,6 +31,6 @@
 </div>
 
 <?php
-\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Modules\Main\Template::getInstance()->showFooter();
+\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
+\Core\Modules\Main\Template::getInstance()->showFooter();
 ?>

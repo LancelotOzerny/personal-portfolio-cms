@@ -16,6 +16,14 @@ class SkillList extends Component
 
         $this->params['areas'] = [];
 
+        $areaOther = [
+            'name' => 'Other',
+            'description' => 'В числе личных компетенций — умение слушать, аргументировать и договариваться. ' .
+                'Комфортно чувствую себя в командной среде, поддерживаю конструктивный диалог с участниками проекта. ' .
+                'Готов осваивать новые инструменты и методики для повышения эффективности работы.',
+            'skills' => []
+        ];
+
         foreach ($arrSkillAreas as $skillArea)
         {
             $this->params['areas'][$skillArea['id']] = [
@@ -23,6 +31,8 @@ class SkillList extends Component
               'description' => $skillArea['description'],
             ];
         }
+
+        $this->params['areas'][] = $areaOther;
 
         foreach ($arrSkills as $skill)
         {
