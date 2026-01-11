@@ -19,6 +19,19 @@ class UsersTable extends TableORM
         $this->addForeignKey('rights_fk', 'rights_id', 'rights', 'id');
     }
 
+    public function getAll(): array
+    {
+        $sql = sprintf(
+            'SELECT `%s`.*, `rights`.level FROM %s JOIN `rights` ON rights_id = `rights`.id',
+            $this->tableName,
+            $this->tableName,
+        );
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll() ?? [];
+    }
+
     public function getByEmail(string $email) : array
     {
         return $this->getByParam('email', $email);
