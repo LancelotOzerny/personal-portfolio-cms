@@ -133,11 +133,16 @@ abstract class TableORM
         return $stmt->fetchAll() ?? [];
     }
 
-    public function find(int $id): array
+    public function getById(int $id): array
     {
-        $sql = sprintf('SELECT * FROM %s WHERE id = :id', $this->tableName);
+        return $this->getByParam('id', $id);
+    }
+
+    protected function getByParam(string $param, string $value): array
+    {
+        $sql = sprintf('SELECT * FROM %s WHERE %s = :%s', $this->tableName, $param, $param);
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':id', $id, \PDO::PARAM_INT);
+        $stmt->bindValue(':' . $param, $value, \PDO::PARAM_INT);
         $stmt->execute();
 
         return $stmt->fetch() ?? [];
