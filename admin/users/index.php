@@ -35,7 +35,7 @@ $users = (new \Core\Tables\UsersTable())->getAll();
 <p class="page-title page-title--light">Список пользователей пуст</p>
 <?php endif; ?>
 
-<div class="page-block crud__footer crud__footer--between">
+<div class="page-block crud-footer crud-footer--between">
     <div class="table-info">
         <p>Пользователи: <?= count($users) ?>/<?= count($users) ?></p>
     </div>

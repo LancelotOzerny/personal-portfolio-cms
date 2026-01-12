@@ -1,6 +1,6 @@
 <?php
-\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Modules\Main\Template::getInstance()->showHeader();
+\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
+\Core\Modules\Main\Template::getInstance()->showHeader();
 ?>
 <table class="crud-table">
 <thead>
@@ -65,12 +65,15 @@
   </tr>
 </tbody>
 </table>
-<div class="page-block">
-<div class="table-info">
-  <p>Проекты: 5/10</p>
-</div>
+<div class="page-block crud-footer crud-footer--between">
+    <div class="table-info">
+        <p>Проекты: 5/10</p>
+    </div>
+    <div class="table__control">
+        <a class="btn btn--rounded btn--success btn--large" href="/admin/content/skills/create.php">Добавить</a>
+    </div>
 </div>
 
 <?php
-\Modules\Main\Template::getInstance()->showFooter();
+\Core\Modules\Main\Template::getInstance()->showFooter();
 ?>

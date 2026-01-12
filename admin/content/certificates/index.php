@@ -1,6 +1,8 @@
 <?php
-\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Modules\Main\Template::getInstance()->showHeader();
+\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
+\Core\Modules\Main\Template::getInstance()->showHeader();
+
+$certificates = [];
 ?>
 <table class="crud-table">
 <thead>
@@ -86,11 +88,17 @@
 </tbody>
 </table>
 <div class="page-block">
-<div class="table-info">
-  <p>Сертификаты: 5/10</p>
-</div>
+    <div class="crud-footer">
+        <div class="table-info">
+            <p>Сертификаты: 5/10</p>
+        </div>
+        
+        <div class="table-control">
+            <a href="/admin/content/certificates/create.php" class="btn btn--success btn--large">Создать</a>
+        </div>
+    </div>
 </div>
 
 <?php
-\Modules\Main\Template::getInstance()->showFooter();
+\Core\Modules\Main\Template::getInstance()->showFooter();
 ?>
