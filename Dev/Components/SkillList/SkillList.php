@@ -16,6 +16,9 @@ class SkillList extends Component
         $arrSkills = (new SkillsTable())->getAll();
         $arrSkillAreas = (new SkillAreasTable())->getAll();
 
+        $this->params['areas_count'] = count($arrSkillAreas);
+        $this->params['skills_count'] = count($arrSkills);
+
         foreach ($arrSkillAreas as $skillArea)
         {
             $this->params['areas'][$skillArea['id']] = [

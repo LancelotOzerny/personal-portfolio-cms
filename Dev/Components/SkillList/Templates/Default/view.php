@@ -2,16 +2,16 @@
 $right_side = false;
 ?>
 
-<?php if(isset($this->params['areas']) && count($this->params['areas']) > 0): ?>
+<?php if($this->params['areas_count'] && $this->params['skills_count']): ?>
 <div class="skill-areas-list">
     <?php foreach ($this->params['areas'] as $area): ?>
+        <?php if(isset($area['skills']) && count($area['skills']) > 0): ?>
         <div class="skill-area <?= $right_side ? 'right' : '' ?>">
             <div class="skill-area__description text-block">
                 <div class="skill-area__title"><?= $area['name'] ?></div>
                 <?= $area['description'] ?>
             </div>
 
-            <?php if(isset($area['skills']) && count($area['skills']) > 0): ?>
             <div class="skill-area__list">
                 <?php foreach ($area['skills'] as $skill): ?>
                     <div class="skill-progress__wrapper">
@@ -25,9 +25,13 @@ $right_side = false;
                     </div>
                 <?php endforeach; ?>
             </div>
-            <?php endif; ?>
         </div>
         <?php $right_side = !$right_side; ?>
+        <?php endif; ?>
     <?php endforeach; ?>
+</div>
+<?php else: ?>
+<div>
+    К сожалению, сейчас я немного неумеха(
 </div>
 <?php endif; ?>
