@@ -11,18 +11,10 @@ class SkillList extends Component
     protected function setComponentParams(array $params): void
     {
         $this->params = [];
-        $arrSkills = (new SkillsTable())->getAll();
-        $arrSkillAreas = (new SkillAreasTable())->getAll();
-
         $this->params['areas'] = [];
 
-        $areaOther = [
-            'name' => 'Other',
-            'description' => 'В числе личных компетенций — умение слушать, аргументировать и договариваться. ' .
-                'Комфортно чувствую себя в командной среде, поддерживаю конструктивный диалог с участниками проекта. ' .
-                'Готов осваивать новые инструменты и методики для повышения эффективности работы.',
-            'skills' => []
-        ];
+        $arrSkills = (new SkillsTable())->getAll();
+        $arrSkillAreas = (new SkillAreasTable())->getAll();
 
         foreach ($arrSkillAreas as $skillArea)
         {
@@ -32,11 +24,18 @@ class SkillList extends Component
             ];
         }
 
-        $this->params['areas'][] = $areaOther;
+        $this->params['areas'][] = [
+            'name' => 'Other',
+            'description' => 'В числе личных компетенций — умение слушать, аргументировать и договариваться. ' .
+                'Комфортно чувствую себя в командной среде, поддерживаю конструктивный диалог с участниками проекта. ' .
+                'Готов осваивать новые инструменты и методики для повышения эффективности работы.',
+            'skills' => []
+        ];
 
+        $areasCount = count($this->params['areas']);
         foreach ($arrSkills as $skill)
         {
-            $this->params['areas'][$skill['area_id']]['skills'][] = $skill;
+            $this->params['areas'][$skill['area_id'] ?? $areasCount]['skills'][] = $skill;
         }
     }
 }
