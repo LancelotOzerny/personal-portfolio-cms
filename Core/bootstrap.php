@@ -45,8 +45,7 @@ try
     if (
         str_starts_with($redirect_url, '/admin/')
         && $redirect_url != '/admin/auth/index.php'
-        && $currentUser
-        && $currentUser['level'] < 100
+        && (!$currentUser || $currentUser['level'] < 100)
     )
     {
         header("Location: /admin/auth/");
