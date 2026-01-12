@@ -25,6 +25,11 @@ class SkillsTable extends TableORM
         );
     }
 
+    public function getByName(string $name): array
+    {
+        return $this->getByParam('name', $name);
+    }
+
     public function getWithAreas() : array
     {
         $sql = sprintf(

@@ -145,7 +145,8 @@ abstract class TableORM
         $stmt->bindValue(':' . $param, $value, \PDO::PARAM_INT);
         $stmt->execute();
 
-        return $stmt->fetch() ?? [];
+        $result = $stmt->fetch();
+        return is_null($result) ? [] : ($result ?: []);
     }
 
     public function update(int $id, array $data): bool
