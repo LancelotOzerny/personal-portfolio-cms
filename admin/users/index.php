@@ -35,9 +35,11 @@ $users = (new \Core\Tables\UsersTable())->getAll();
 <p class="page-title page-title--light">Список пользователей пуст</p>
 <?php endif; ?>
 
-<div class="page-block">
+<div class="page-block crud__footer crud__footer--between">
     <div class="table-info">
-      <p>Пользователи: <?= count($users) ?>/<?= count($users) ?></p>
+        <p>Пользователи: <?= count($users) ?>/<?= count($users) ?></p>
+    </div>
+    <div class="table__control"><a class="btn btn--rounded btn--success btn--large" href="#">Добавить</a>
     </div>
 </div>
 
