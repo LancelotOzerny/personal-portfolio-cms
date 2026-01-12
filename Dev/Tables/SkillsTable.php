@@ -12,6 +12,8 @@ class SkillsTable extends TableORM
 
         $this->addField('id', 'INT AUTO_INCREMENT PRIMARY KEY');
         $this->addField('name', 'VARCHAR(255) NOT NULL UNIQUE');
+        $this->addField('logo', 'VARCHAR(255)');
+        $this->addField('description', 'TEXT');
         $this->addField('progress', 'INT(3)');
         $this->addField('area_id', 'INT NOT NULL');
 
