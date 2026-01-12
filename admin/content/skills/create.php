@@ -3,8 +3,8 @@ $errors = [];
 
 if (isset($_POST['skill-create']))
 {
-    $name = $_POST['skill-name'];
-    $description = $_POST['skill-description'];
+    $name = htmlspecialchars($_POST['skill-name']);
+    $description = htmlspecialchars($_POST['skill-description']);
     $progress = $_POST['skill-progress'];
     $areaId = $_POST['skill-group'];
 
@@ -59,13 +59,16 @@ if (isset($_POST['skill-create']))
 
     if (empty($errors))
     {
-        (new \Dev\Tables\SkillsTable())->insert([
-            'name' => $name,
-            'description' => $description,
-            'progress' => $progress,
-            'area_id' => $areaId,
-            'logo' => $filePath ?? null,
-        ]);
+        $fields = [
+                'name' => $name,
+                'description' => $description,
+                'progress' => $progress,
+        ];
+
+        if ($areaId > 0) $fields['area_id'] = $areaId;
+        if (isset($filePath)) $fields['logo'] = $filePath;
+
+        (new \Dev\Tables\SkillsTable())->insert($fields);
 
         header('Location: /admin/content/skills/');
     }
