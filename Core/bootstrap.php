@@ -37,6 +37,7 @@ if (
     {
         $isAuthorised = true;
         $currentUser = (new \Core\Tables\UsersTable())->getById($_SESSION['login-id']);
+        $_SESSION['login-time'] = time();
     }
 }
 
