@@ -15,7 +15,7 @@ class SkillsTable extends TableORM
         $this->addField('logo', 'VARCHAR(255)');
         $this->addField('description', 'TEXT');
         $this->addField('progress', 'INT(3)');
-        $this->addField('area_id', 'INT NOT NULL');
+        $this->addField('area_id', 'INT DEFAULT NULL');
 
         $this->addForeignKey(
             'fk_skill_area',
@@ -23,5 +23,20 @@ class SkillsTable extends TableORM
             'skill_areas',
             'id'
         );
+    }
+
+    public function getWithAreas() : array
+    {
+        $sql = sprintf(
+            'SELECT `%s`.*, `skill_areas`.name as `area_name`, `skill_areas`.description as `area_description` 
+                    FROM %s 
+                    LEFT JOIN `skill_areas` ON `skill_areas`.id = area_id',
+            $this->tableName,
+            $this->tableName,
+        );
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll() ?? [];
     }
 }

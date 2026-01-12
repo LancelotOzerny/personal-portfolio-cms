@@ -1,98 +1,52 @@
 <?php
-\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Modules\Main\Template::getInstance()->showHeader();
+\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
+\Core\Modules\Main\Template::getInstance()->showHeader();
+
+$skillsList = (new \Dev\Tables\SkillsTable())->getWithAreas();
 ?>
-<form class="form skill-areas-list" id="edit-form"></form>
-<div class="skill-area">
-<div class="skill-area__description text-block">
-  <p class="skill-area__title" data-form-element="input">title</p>
-  <p>lorem ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en</p>
-</div>
-<div class="skill-area__list">
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
+
+    <table class="crud-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Навык</th>
+            <th>Прогресс</th>
+            <th>Логотип</th>
+            <th>Описание</th>
+            <th>Группа</th>
+            <th style="text-align: center;">Управление</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <?php foreach ($skillsList as $skill): ?>
+            <tr>
+                <td><?= $skill['id'] ?></td>
+                <td><?= $skill['name'] ?></td>
+                <td><?= $skill['progress'] ?>%</td>
+                <td><img src="<?= $skill['logo'] ?>" alt="preview image" width="96"></td>
+                <td><?= $skill['description'] ?></td>
+                <td><?= $skill['area_name'] ?></td>
+                <td>
+                    <div class="crud-table__control">
+                        <a class="btn btn--squire btn--info btn--rounded&amp;#10006;" href="#">&#128736;</a>
+                        <a class="btn btn--squire btn--danger btn--rounded&amp;#10006;" href="#">&#10006;</a>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+        </tbody>
+    </table>
+    <div class="page-block crud-footer crud-footer--between">
+        <div class="table-info">
+            <p>Навыки: 5/10</p>
+        </div>
+        <div class="table__control">
+            <a class="btn btn--rounded btn--success btn--large" href="/admin/content/skills/create.php">Добавить</a>
+        </div>
     </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="skill-area right">
-<div class="skill-area__description text-block">
-  <div class="skill-area__title">title</div>
-  <lorem>ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en</lorem>
-  <lorem>ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en lorem ipsum emmet dollar en</lorem>
-</div>
-<div class="skill-area__list">
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-  <div class="skill-progress__wrapper">
-    <div class="skill-progress">
-      <p class="skill-progress__title">title</p>
-      <div class="skill-progress__line">
-        <div class="skill-progress__fill"></div>
-      </div>
-      <div class="skill-progress__handler">55%</div>
-    </div>
-  </div>
-</div>
-</div>
 
 <?php
-\Modules\Main\Template::getInstance()->showFooter();
+\Core\Modules\Main\Template::getInstance()->showFooter();
 ?>
