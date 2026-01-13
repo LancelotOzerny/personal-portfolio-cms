@@ -1,4 +1,5 @@
 <?php
+\Core\Modules\Main\Template::getInstance()->setParam('page-title', 'Управление списком пользователей');
 \Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
 \Core\Modules\Main\Template::getInstance()->showHeader();
 
@@ -39,7 +40,8 @@ $users = (new \Core\Tables\UsersTable())->getAll();
     <div class="table-info">
         <p>Пользователи: <?= count($users) ?>/<?= count($users) ?></p>
     </div>
-    <div class="table__control"><a class="btn btn--rounded btn--success btn--large" href="#">Добавить</a>
+    <div class="table__control">
+        <a class="btn btn--rounded btn--success btn--large" href="#">Добавить</a>
     </div>
 </div>
 

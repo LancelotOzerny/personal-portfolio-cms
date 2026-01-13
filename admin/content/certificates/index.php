@@ -88,7 +88,7 @@ $certificates = [];
 </tbody>
 </table>
 <div class="page-block">
-    <div class="crud-footer">
+    <div class="crud-footer crud-footer--between">
         <div class="table-info">
             <p>Сертификаты: 5/10</p>
         </div>

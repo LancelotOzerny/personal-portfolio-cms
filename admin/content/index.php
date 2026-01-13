@@ -1,8 +1,13 @@
 <?php
-\Core\Modules\Main\Template::getInstance()->setTemplate('Admin');
-\Core\Modules\Main\Template::getInstance()->showHeader();
+use Core\Modules\Main\Template;
+
+Template::getInstance()->setParam('page-title', 'Управление пользовательским контентом');
+
+Template::getInstance()->setTemplate('Admin');
+Template::getInstance()->showHeader();
+
 
 (new \Dev\Components\ControlList\ControlList())->show();
 
-\Core\Modules\Main\Template::getInstance()->showFooter();
+Template::getInstance()->showFooter();
 ?>
