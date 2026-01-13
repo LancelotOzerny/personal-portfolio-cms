@@ -25,8 +25,8 @@ class ControlList extends Component
                 $cardInfo = $params['menu'];
 
                 $this->params['cards'][] = [
-                    'title' => $cardInfo['title'],
-                    'desc' => $cardInfo['desc'],
+                    'title' => $cardInfo['title'] ?? $item,
+                    'desc' => $cardInfo['desc'] ?? '',
                     'link' => Application::getInstance()->getCurrentDir() . $item . '/',
                 ];
             }
