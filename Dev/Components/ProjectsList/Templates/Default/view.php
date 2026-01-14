@@ -8,8 +8,8 @@
             <p class="card__description"><?= $project['preview_text'] ?></p>
         </div>
         <div class="card__footer">
-            <?php foreach ($project['links'] as $param): ?>
-            <a class="btn btn--white btn--outline btn--medium" href="#">Git</a>
+            <?php foreach ($project['links'] as $link): ?>
+            <a class="btn btn--white btn--outline btn--medium" href="<?= $link['url'] ?>"><?= $link['name'] ?></a>
             <?php endforeach; ?>
         </div>
     </div>
