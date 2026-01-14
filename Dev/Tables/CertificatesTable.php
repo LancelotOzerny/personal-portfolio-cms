@@ -15,8 +15,8 @@ class CertificatesTable extends TableORM
         $this->addField('name', 'VARCHAR(255) NOT NULL');
         $this->addField('date', 'DATE NOT NULL');
         $this->addField('additional', 'VARCHAR(255)');
-        $this->addField('logo', 'VARCHAR(255)');
+        $this->addField('logo_url', 'VARCHAR(255)');
         $this->addField('theme', 'TINYTEXT DEFAULT NULL');
-        $this->addField('download_link', 'VARCHAR(255) NOT NULL');
+        $this->addField('document_url', 'VARCHAR(255) NOT NULL');
     }
 }

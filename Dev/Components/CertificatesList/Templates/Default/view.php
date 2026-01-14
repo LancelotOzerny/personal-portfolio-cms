@@ -14,11 +14,11 @@
                 </div>
             </div>
             <div class="certificate__right-side">
-                <?php if($certificate['logo']): ?>
-                    <img class="certificate__logo" src="<?= $certificate['logo'] ?>"/>
+                <?php if($certificate['logo_url']): ?>
+                    <img class="certificate__logo" src="<?= $certificate['logo_url'] ?>" alt="<?= $certificate['title'] ?>"/>
                 <?php endif; ?>
                 <div>
-                    <a class="btn btn--white btn--circle btn--large" href="<?= $certificate['download_link'] ?>">скачать (pdf)</a>
+                    <a class="btn btn--white btn--circle btn--large" href="<?= $certificate['document_url'] ?>">Посмотреть</a>
                 </div>
             </div>
         </div>
