@@ -74,12 +74,17 @@
 .card {
   box-shadow: 0 0 2px #000, inset 0 0 4px #222;
   display: inline-grid;
+grid-template-rows: 200px 175px ;
   grid-row-gap: 25px;
   text-align: center;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
-    transition: .2s;
+transition: .2s;
+}
+.card__content
+{
+    overflow-y: hidden;
 }
 .card:hover .card__title::after {
   right: 0;
